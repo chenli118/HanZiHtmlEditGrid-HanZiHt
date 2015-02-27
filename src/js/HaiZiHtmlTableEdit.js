@@ -398,7 +398,7 @@ EditableGrid.prototype.processJSON = function (jsonData)
 {
 	if (typeof jsonData == "string")
 	{
-		jsonData = eval("(" + jsonData + ")")
+		jsonData = eval("(" + jsonData.replace(/\n|\r/g, "") + ")")
 	}
 	if (!jsonData) { return false }
 	this.data = [];
